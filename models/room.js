@@ -3,29 +3,29 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
     maxcount: {
         type: Number,
-        require: true
+        required: true
     },
     phonenumber: {
         type: Number,
-        require: true
+        required: true
     },
     rentperday: {
         type: Number,
-        require: true
+        required: true
     },
     imageurls: [],
     currentbookings: [],
     type: {
         type: String,
-        require: true
+        required: true
     },
     description: {
         type: String,
-        require: true
+        required: true
     }
 },{
     timestamps: true,
