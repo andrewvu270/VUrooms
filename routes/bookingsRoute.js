@@ -45,8 +45,8 @@ router.post('/bookroom', async (req, res) => {
                     transactionid: '1234'
                 })
         
-                const booking = await newBooking.save()
-                const roomTemp = await Room.findOne({ _id: room._id, })
+                const booking = await newBooking.save(async(err, booking)=>{
+                    const roomTemp = await Room.findOne({ _id: room._id, })
                 
                 roomTemp.currentbookings.push({
                     bookingid: booking._id, 
@@ -57,13 +57,16 @@ router.post('/bookroom', async (req, res) => {
                 })
         
                     await roomTemp.save()
+                })
+                
         
-                res.send('Room booked successfully')
+                return res.send('Room booked successfully')
             } catch(error){
                 return res.status(400).json({error})
             }
+        
         }
-        res.send('Payment successful! Your room is booked')
+        
 
     } catch (error) {
         return res.status(400).json({error})
