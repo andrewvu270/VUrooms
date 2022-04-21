@@ -22,6 +22,7 @@ function Room({ room, fromDate, toDate }) {
                     <p>Max Count: {room.maxcount}</p>
                     <p>Phone Number: {room.phonenumber}</p>
                     <p>Type: {room.type}</p>
+                    <p>Rent Per Day: {room.rentperday}</p>
                 </b>
                 <div style={{ float: 'right' }}>
                     {(fromDate && toDate) && (

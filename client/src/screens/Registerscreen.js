@@ -33,6 +33,10 @@ function Registerscreen() {
                 setEmail('')
                 setPassword('')
                 setCpassword('')
+                window.setTimeout(function(){
+                    window.location.href = '/login'
+                },1200)
+                
             } catch(error){
                 console.log(error)
                 setLoading(false)
@@ -52,7 +56,7 @@ function Registerscreen() {
             
             <div className='row justify-content-center mt-5'>
                 <div className='col-md-5 mt-5'>
-                {success && (<Success message='Registration success'/>)}
+                {success && (<Success message='Registration success. Redirecting to Login Page. Please wait...'/>)}
                     <div className='bs'>
                         <h2>Register</h2>
                         <div className='input-group mb-2'></div>
